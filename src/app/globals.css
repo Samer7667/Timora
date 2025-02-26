@@ -2,22 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ضبط الألوان العامة لتناسب لون الشعار */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #2B2F38; /* لون مطابق للشعار */
+  --foreground: #ffffff; /* لون النص */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1E2128; /* لون أغمق للوضع الليلي */
+    --foreground: #ffffff;
   }
 }
 
-body {
+/* تطبيق اللون في الـ Navbar */
+nav {
+  background-color: var(--background) !important;
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* تنسيق الروابط داخل القائمة */
+ul li a {
+  text-decoration: none;
+  color: var(--foreground);
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+ul li a:hover {
+  color: #FFD700; /* لون ذهبي عند التمرير */
 }
 @tailwind base;
 @tailwind components;

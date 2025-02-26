@@ -1,9 +1,9 @@
 "use client";
+
 import React from "react";
 
 const About = () => {
   return (
-    
     <main className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-5 text-center">
       <h1 className="text-4xl font-bold text-blue-600 mb-4">من نحن</h1>
       <p className="text-lg text-gray-700 max-w-2xl">
@@ -20,7 +20,7 @@ const About = () => {
         <li>✔ خدمة عملاء مميزة لضمان رضاك</li>
       </ul>
       <h2 className="text-2xl font-semibold text-blue-600 mt-6">📞 للتواصل معنا</h2>
-      <p className="text-lg text-gray-700">الاسم: <span className="font-bold">سامر عبدالعزيز الفيفي</span></p>
+      <p className="text-lg text-gray-700">الاسم: <span className="font-bold">@Programmer.Sammer</span></p>
       <p className="text-lg text-gray-700">رقم الجوال: <span className="font-bold">0535620007</span></p>
     </main>
   );
