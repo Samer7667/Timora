@@ -4,7 +4,7 @@ interface PageProps {
   params: { id: string };
 }
 
-const ProductDetails = ({ params }: PageProps) => {
+const ProductDetails = ({ params }: { params: { id: string } }) => {
   // بيانات المنتجات الوهمية
   const products: Record<number, { name: string; price: string; description: string }> = {
     1: { name: "ساعة رولكس", price: "1500 ريال", description: "ساعة فاخرة بجودة عالية." },
@@ -12,7 +12,8 @@ const ProductDetails = ({ params }: PageProps) => {
     3: { name: "ساعة سامسونج الذكية", price: "800 ريال", description: "ساعة ذكية بأحدث التقنيات." }
   };
 
-  const productId = parseInt(params.id, 10);
+  // التأكد من أن `params.id` موجود وقابل للتحويل إلى رقم
+  const productId = Number(params.id);
   const product = products[productId];
 
   return (
