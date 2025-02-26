@@ -1,10 +1,13 @@
+"use client"; // ✅ أضف هذا في السطر الأول
+
 import { useParams } from "next/navigation";
 import Link from 'next/link';
 
 const ProductDetails = () => {
-  const params = useParams(); // استخدام useParams لاستخراج ID
+  const params = useParams(); // استخراج الـ ID من الرابط
   const productId = Number(params.id);
 
+  // قائمة المنتجات الوهمية
   const products: Record<number, { name: string; price: string; description: string }> = {
     1: { name: "ساعة رولكس", price: "1500 ريال", description: "ساعة فاخرة بجودة عالية." },
     2: { name: "ساعة كاسيو", price: "200 ريال", description: "ساعة بسيطة وأنيقة بسعر مناسب." },
