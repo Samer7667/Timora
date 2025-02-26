@@ -1,19 +1,16 @@
+import { useParams } from "next/navigation";
 import Link from 'next/link';
 
-interface PageProps {
-  params: { id: string };
-}
+const ProductDetails = () => {
+  const params = useParams(); // استخدام useParams لاستخراج ID
+  const productId = Number(params.id);
 
-const ProductDetails = ({ params }: { params: { id: string } }) => {
-  // بيانات المنتجات الوهمية
   const products: Record<number, { name: string; price: string; description: string }> = {
     1: { name: "ساعة رولكس", price: "1500 ريال", description: "ساعة فاخرة بجودة عالية." },
     2: { name: "ساعة كاسيو", price: "200 ريال", description: "ساعة بسيطة وأنيقة بسعر مناسب." },
     3: { name: "ساعة سامسونج الذكية", price: "800 ريال", description: "ساعة ذكية بأحدث التقنيات." }
   };
 
-  // التأكد من أن `params.id` موجود وقابل للتحويل إلى رقم
-  const productId = Number(params.id);
   const product = products[productId];
 
   return (
